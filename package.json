@@ -1,17 +1,19 @@
 {
-  "name": "dependency-confusion-poc",
+  "name": "dependency-confusion-test-lab",
   "version": "1.0.0",
-  "description": "⚠️ TEST ONLY - Dependency Confusion Vulnerability Demo ⚠️",
+  "description": "🧪 Testing environment for Dependency Confusion vulnerability - All internal packages are FAKE names not registered on npm",
   "private": false,
   "dependencies": {
     "lodash": "4.17.21",
-    "express": "4.18.2",
-    "@company/auth-lib": "999.0.0",
-    "internal-db-client": "999.0.0",
-    "secrets-manager-core": "999.0.0"
+    "axios": "1.6.0",
+    "@acme-internal/auth-service": "1.0.0",
+    "@corp-secrets/core-lib": "2.0.0",
+    "internal-db-poc-2026": "1.0.0",
+    "company-logger-fake-test": "1.0.0",
+    "sso-helper-internal": "3.0.0"
   },
   "scripts": {
-    "preinstall": "node -e \"console.log('\\x1b[31m[!] Potential Dependency Confusion: Malicious package installed from public registry!\\x1b[0m')\"",
-    "postinstall": "node -e \"try{require('fs').writeFileSync('pwned.txt', 'Vulnerable to dependency confusion at '+new Date())}catch(e){}\""
+    "preinstall": "echo '⚠️ Testing: If you see this from a fake package, dependency confusion is possible'",
+    "test:confusion": "node -e \"console.log('\\x1b[33m[TEST] Run npm install and watch for fake packages\\x1b[0m')\""
   }
 }
