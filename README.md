@@ -1,0 +1,2 @@
+# dependency-confusion-test
+test
